@@ -24,7 +24,7 @@
 	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/mainlogin.css">
 <!--===============================================================================================-->
 </head>
 <body>
@@ -54,7 +54,7 @@
 
 					<ul class="login-more p-t-190">
 						<li>
-							<a href="#" class="txt2">
+							<a href="http://localhost:8080/account.jsp" class="txt2">
 								Sign up
 							</a>
 						</li>
