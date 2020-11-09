@@ -16,7 +16,7 @@ public class LoginDao {
 		Class.forName("com.mysql.jdbc.Driver");
 
 		try (Connection connection = DriverManager
-				.getConnection("jdbc:mysql://127.0.0.1:3306/midterm_practice?serverTimezone=EST5EDT", "root", "rootroot");
+				.getConnection("jdbc:mysql://127.0.0.1:3306/ttapp?serverTimezone=EST5EDT", "root", "rootroot");
 
 				// Step 2:Create a statement using connection object
 				PreparedStatement preparedStatement = connection

@@ -56,7 +56,7 @@
 
 					<ul class="login-more p-t-190">
 						<li>
-							<a href="http://localhost:8080/account.jsp" class="txt2">
+							<a href="http://localhost:8080/ttapp/account.jsp" class="txt2">
 								Sign up
 							</a>
 						</li>
