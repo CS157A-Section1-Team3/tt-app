@@ -11,11 +11,11 @@ public class EmployeeDao {
 
     public int registerEmployee(Employee employee) throws ClassNotFoundException {
         String INSERT_USERS_SQL = "INSERT INTO USERS" + 
-        		"(id,username,password,departmentID) VALUES"+
-        		"(LAST_INPUT_ID(),?,?,?);";
+        		"(username,password,departmentID) VALUES"+
+        		"(?,?,?);";
         String INSERT_POS_SQL = "INSERT INTO POSITION" + 
-        		"(userID,depar;tmentID,position) VALUES" +
-        		"(LAST_INPUT_ID(),?,?);";
+        		"(depar;tmentID,position) VALUES" +
+        		"(?,?);";
 
         int result = 0;
 
