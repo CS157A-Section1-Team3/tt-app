@@ -16,7 +16,6 @@ public class EmployeeDao {
         String INSERT_POS_SQL = "INSERT INTO POSITION " + 
         		"(departmentID,position) VALUES" +
         		"(?,?);";
-
         int result = 0;
 
         Class.forName("com.mysql.jdbc.Driver");

@@ -16,7 +16,7 @@ public class trackingdao {
 	        String INSERT_HOURS_SQL = "INSERT INTO Hours " + 
 	        		"(UserID,hWorked) VALUES" +
 	        		"((SELECT ID FROM USERS WHERE username = ?),"
-	        		+ "(SELECT TIMEDIFF(?,?)));";
+	        		+ "(SELECT HOUR(TIMEDIFF(?,?))));";
 	        String INSERT_WORKINGON_SQL = "INSERT INTO Workingon " +
 	        		"(teamID,ProjectID,UserID) VALUES"+
 	        		"(?,?,(SELECT ID FROM USERS WHERE username = ?));";
