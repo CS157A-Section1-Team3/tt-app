@@ -50,24 +50,21 @@
                             </div>
                         </div>
                         
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Position</label>
-                                    <div class="p-t-10">
-                                        <label class="radio-container m-r-45">Trainee
-                                            <input type="radio" checked="checked" name="Position">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="radio-container">Employee
-                                        <input type="radio" name="Position">
-                                        <span class="checkmark"></span>
-                                        </label>
-                                        <label class="radio-container">Manager
-                                            <input type="radio" name="Position">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </div>
-                                </div>
+                        <div class="input-group">
+                            <label class="label">Position</label>
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="position">
+                                    <option disabled="disabled" selected="selected">Position</option>
+                                    <option>Trainee</option>
+                                    <option>Intern</option>
+                                    <option>Employee</option>
+                                    <option>Manager</option>
+                                    <option>CTO</option>
+                                    <option>CEO</option>
+                                    <option>Director</option>
+                                    <option>Tech Lead</option>
+                                </select>
+                                <div class="select-dropdown"></div>
                             </div>
                         </div>
                         <!--<div class="input-group">

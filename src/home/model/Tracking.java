@@ -1,11 +1,11 @@
 package home.model;
 
-public class Tracking {
+public class tracking {
 	private String Start;
 	private String End;
 	private String PID;
 	private String Team;
-	private String UID;
+	private String Username;
 	
 	public String getStart() {
 		return Start;
@@ -31,11 +31,11 @@ public class Tracking {
 	public void setTeam(String team) {
 		Team = team;
 	}
-	public int getUID() {
-		return UID;
+	public String getUsername() {
+		return Username;
 	}
-	public void setUID(int uid) {
-		UID = uid;
+	public void setUsername(String username) {
+		Username = username;
 	}
 
 }

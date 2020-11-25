@@ -11,8 +11,8 @@ import net.javaguides.login.bean.LoginBean;
 public class LoginDao {
 
 	public boolean validate(LoginBean loginBean) throws ClassNotFoundException {
-		boolean status = false;
-
+		String UID = "";
+		
 		Class.forName("com.mysql.jdbc.Driver");
 
 		try (Connection connection = DriverManager
@@ -20,19 +20,27 @@ public class LoginDao {
 
 				// Step 2:Create a statement using connection object
 				PreparedStatement preparedStatement = connection
-						.prepareStatement("select Username,Password from Users where username = ? and password = ? ")) {
+						.prepareStatement("select ID from Users where username = ? and password = ? ")) {
 			preparedStatement.setString(1, loginBean.getUsername());
 			preparedStatement.setString(2, loginBean.getPassword());
 			//department and position
 			System.out.println(preparedStatement);
 			ResultSet rs = preparedStatement.executeQuery();
-			status = rs.next();
+			
+			if( rs.next() ) {
+				UID = rs.getString("ID");
+				
+			}
+			else {
+				return false; //user not in system
+			}
+
 
 		} catch (SQLException e) {
 			// process sql exception
 			printSQLException(e);
 		}
-		return status;
+		return true; 
 	}
 
 	private void printSQLException(SQLException ex) {
