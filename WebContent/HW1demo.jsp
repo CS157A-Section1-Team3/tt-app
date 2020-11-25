@@ -8,7 +8,7 @@
     
     <table border="1">
       <tr>
-        <td>Shift_ID</td>
+        <td>ShiftID</td>
         <td>Project_ID</td>
         <td>Start_Time</td>
         <td>End_Time</td>

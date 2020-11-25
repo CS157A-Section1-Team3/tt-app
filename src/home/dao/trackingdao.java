@@ -35,8 +35,8 @@ public class trackingdao {
 	            try (PreparedStatement preparedStatement = connection.prepareStatement(INSERT_HOURS_SQL)) {      
 	            
 	            	//grab username via html variable passing
-	            	preparedStatement.setString(4, tracking.getTeam());
-	            	preparedStatement.setString(5, tracking.getUsername());
+	            	preparedStatement.setString(1, tracking.getTeam());
+	            	preparedStatement.setString(2, tracking.getUsername());
 		            //make sure the same UID gets input into hWorked query.
 		            System.out.println(preparedStatement);
 		            // Step 3: Execute the query or update query
