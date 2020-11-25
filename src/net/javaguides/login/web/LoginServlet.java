@@ -33,11 +33,11 @@ public class LoginServlet extends HttpServlet {
 
 		try {
 			if (loginDao.validate(loginBean)) {
-				//HttpSession session = request.getSession();
-				// session.setAttribute("username",username);
+				HttpSession session = request.getSession();
+				session.setAttribute("username",username);
 				response.sendRedirect("home.jsp");
 			} else {
-				HttpSession session = request.getSession();
+				//HttpSession session = request.getSession();
 				//session.setAttribute("user", username);
 				response.sendRedirect("login.jsp");
 			}

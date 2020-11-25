@@ -11,7 +11,7 @@
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title>Au Register Forms by Colorlib</title>
+    <title>Time Tracking Application</title>
 
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -32,18 +32,18 @@
             <div class="card card-4">
                 <div class="card-body">
                     <h2 class="title">Time Enter Form</h2>
-                    <form method="POST">
+                    <form method="POST" action="<%= request.getContextPath() %>/HomeServlet">
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Start</label>
-                                    <input class="input--style-4" type="text" name="first_name">
+                                    <label class="label">Start (YYYY-MM-DD HH:MM:SS)</label>
+                                    <input class="input--style-4" type="text" name="Start">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">End</label>
-                                    <input class="input--style-4" type="text" name="last_name">
+                                    <input class="input--style-4" type="text" name="End">
                                 </div>
                             </div>
                         </div>
@@ -94,7 +94,7 @@
                         <div class="input-group">
                             <label class="label">Project</label>
                             <div class="rs-select2 js-select-simple select--no-search">
-                                <select name="subject">
+                                <select name="PID">
                                     <option disabled="disabled" selected="selected">Choose Project</option>
                                     <option>1</option>
                                     <option>2</option>
@@ -118,7 +118,7 @@
                         <div class="input-group">
                             <label class="label">Team</label>
                             <div class="rs-select2 js-select-simple select--no-search">
-                                <select name="subject">
+                                <select name="Team">
                                     <option disabled="disabled" selected="selected">Choose Team</option>
                                     <option>1</option>
                                     <option>2</option>

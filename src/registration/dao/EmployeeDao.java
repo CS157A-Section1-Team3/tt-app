@@ -10,13 +10,12 @@ import registration.model.Employee;
 public class EmployeeDao {
 
     public int registerEmployee(Employee employee) throws ClassNotFoundException {
-        String INSERT_USERS_SQL = "INSERT INTO USERS" + 
+        String INSERT_USERS_SQL = "INSERT INTO USERS " + 
         		"(username,password,departmentID) VALUES"+
         		"(?,?,?);";
-        String INSERT_POS_SQL = "INSERT INTO POSITION" + 
-        		"(depar;tmentID,position) VALUES" +
+        String INSERT_POS_SQL = "INSERT INTO POSITION " + 
+        		"(departmentID,position) VALUES" +
         		"(?,?);";
-
         int result = 0;
 
         Class.forName("com.mysql.jdbc.Driver");
@@ -33,8 +32,8 @@ public class EmployeeDao {
             try (PreparedStatement preparedStatement = connection.prepareStatement(INSERT_POS_SQL)) {      
             
 	          
-	            preparedStatement.setString(3, employee.getDepartmentID());
-	            preparedStatement.setString(4, employee.getPosition());
+	            preparedStatement.setString(1, employee.getDepartmentID());
+	            preparedStatement.setString(2, employee.getPosition());
 	
 	            System.out.println(preparedStatement);
 	            // Step 3: Execute the query or update query
