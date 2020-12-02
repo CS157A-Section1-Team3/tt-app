@@ -146,17 +146,17 @@
                     </form>
                     <div class="p-t-15">
                         <button class="btn btn--radius-2 btn--blue" type="submit">
-                            <a href="http://localhost:8080/history.jsp" class="txt2">
+                            <a href="http://localhost:8080/ttapp/history.jsp" class="txt2">
                             To History</a></button>
                     </div>
                     <div class="p-t-15">
                         <button class="btn btn--radius-2 btn--blue" type="submit">
-                            <a href="http://localhost:8080/dept.jsp" class="txt2">
+                            <a href="http://localhost:8080/ttapp/department.jsp" class="txt2">
                                 To Department</a></button>
                     </div>
                     <div class="p-t-15">
-                        <button class="btn btn--radius-2 btn--blue" type="submit">
-                            <a href="http://localhost:8080/project.jsp" class="txt2">
+                        <button class="btn btn--radius-2 btn--blue" type="submit"></button>
+                            <a href="http://localhost:8080/ttapp/project.jsp" class="txt2">
                                 To Project</a></button>
                     </div>
                 </div>

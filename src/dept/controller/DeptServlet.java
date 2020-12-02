@@ -45,7 +45,7 @@ public class DeptServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String Department = request.getParameter("Department");
+		String Department = request.getParameter("department");
 		
 		Department department = new Department();
 		department.setDepartment(Department);
