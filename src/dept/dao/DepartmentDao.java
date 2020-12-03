@@ -1,4 +1,5 @@
 package dept.dao;
+import java.io.PrintWriter;
 import java.sql.Connection;
 
 import java.sql.DriverManager;
@@ -10,35 +11,46 @@ import java.sql.Statement;
 import dept.model.Department;
 
 public class DepartmentDao { 
-	public void showDept(Department department) throws ClassNotFoundException {
+	public void showDept(Department department,PrintWriter pw) throws ClassNotFoundException {
 		String SHOW_DEPT = "SELECT Users.ID as 'EmployeeID', "
 				+ "SUM(hWorked) as 'Total hours worked' " +
 				"FROM department, Hours, SHIFT, Users " + 
-				"WHERE Department.name = ? AND Users.id = shift.pid " +
-				"GROUP BY shift.pid " + 
-				"ORDER BY SUM(hWorked);";
+				"WHERE Department.name = ? AND hours.UserID = USERS.ID " +
+				"AND shift.id = hours.shiftid " +
+				"AND users.departmentid = department.id " +
+				"GROUP BY Users.id " + 
+				"ORDER BY SUM(hWorked) DESC;";
 		Class.forName("com.mysql.jdbc.Driver");
 		
 		try (Connection connection = DriverManager
-					.getConnection("jdbc:mysql://127.0.0.1:3306/ttapp?serverTimezone=EST5EDT", "root", "rootroot")){
+					.getConnection("jdbc:mysql://127.0.0.1:3306/ttapp?serverTimezone=PST&useSSL=false", "root", "rootroot")){
 
 	         try (PreparedStatement preparedStatement = connection.prepareStatement(SHOW_DEPT)) {
 				 preparedStatement.setString(1,department.getDepartment());
-				 
+				 //create result set
 				 ResultSet rs = preparedStatement.executeQuery();
+				 //Title of the page
 				 
-				 System.out.println("hours worked ranking");
-				 
+				 pw.println("<strong>Hours Worked Ranking For Department: </strong>" + department.getDepartment() + "<br/><br/>");
+				 pw.println("<html><table>");
+			
 				 while (rs.next()) {
 					 String UserID = rs.getString("EmployeeID");
 					 String hWorked = rs.getString("Total hours worked");
-					 System.out.println(UserID + "   " + hWorked + "   ");
+					
+					 pw.println("<tr><td>"+"UserID: " + UserID + "</td></tr>"+ "<tr><td>" + "Total Hours Worked: " + hWorked + "</td></tr>");
 			 	}
+				pw.println("</table></html>");
+				pw.close();
+			 	rs.close();
+				 
+				 
 	         } 
 		 }  catch (SQLException e) {
 	            // process sql exception
 	            printSQLException(e);
-	     } 
+	     }
+		
 	            
 	}
 	

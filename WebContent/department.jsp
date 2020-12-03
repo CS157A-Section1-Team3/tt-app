@@ -48,8 +48,7 @@
 
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
-							<a href="http://localhost:8080/ttapp/home.jsp" class="txt2">Back to Homepage
-							</a>	
+							Show the ranking!								
 						</button>
 					</div>
 

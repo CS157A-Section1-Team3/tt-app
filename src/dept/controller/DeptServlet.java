@@ -1,6 +1,7 @@
 package dept.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -35,6 +36,7 @@ public class DeptServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/ttapp/department.jsp");
 		dispatcher.forward(request,response);
@@ -46,12 +48,16 @@ public class DeptServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String Department = request.getParameter("department");
-		
 		Department department = new Department();
 		department.setDepartment(Department);
 		
+		//trying to set up printwriter to show html prints of our tables
+		response.setContentType("text/html");
+		PrintWriter pw = response.getWriter();
+		
+		
 		try {
-			departmentdao.showDept(department);
+			departmentdao.showDept(department,pw);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
