@@ -51,7 +51,6 @@
 							Show the ranking!								
 						</button>
 					</div>
-
 					<ul class="login-more p-t-190">
 						<li>
 							<a href="http://localhost:8080/ttapp/home.jsp" class="txt2">
