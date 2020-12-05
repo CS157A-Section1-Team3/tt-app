@@ -40,7 +40,7 @@
         try {
             java.sql.Connection con;
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Time?serverTimezone=EST5EDT","root", "rootroot");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ttapp?serverTimezone=EST5EDT","root", "rootroot");
             out.println(db + " Tracking App designed for you<br/><br/>");
             out.println("Project ID");
             out.println("-------");
